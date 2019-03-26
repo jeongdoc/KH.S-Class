@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Sunflower:300,500,700&amp;subset=korean");
+/* @import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"); */
+/* <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> */
+/* 약관 동의 스타일시트 */
+#termsHtml {
+	 background: url(../../images/agreeBg2.jpg) no-repeat center center fixed; 
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+	font-family: 'Sunflower', 'sans-serif';
+}
+#termsHtml #termsText {
+	resize: none;
+}
+#termsHtml #doglogo {
+	width: 70px;
+	height: 70px;
+	position: relative;
+	top: 5%;
+	left: 20%;
+}
+#termsHtml #content.cols-d {
+	width: 583px; min-width: 583px; margin: 0 auto; 
+}
+#termsHtml ul {
+	list-style: none;
+}
+#termsHtml input{ 
+	display: none; 
+}
+
+#termsHtml label div {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border: 2px solid #58B19F;
+	text-align: center;
+	line-height: 20px;
+	margin-right: 6px;	
+	border-radius: 3px;
+	cursor: pointer;	
+}
+#termsHtml label i{ 
+	font-size: 16px;
+	color: #fff;
+	opacity: 0;
+}
+#termsHtml label:hover div{ 
+	background: #16a085; 
+}
+#termsHtml input:checked+label i{ 
+	opacity: 1; 
+}
+#termsHtml input:checked+label div{ 
+	background: #16a085; 
+}
+
+#termsHtml .f { 
+	position: relative; 
+	margin: auto; 
+	padding: 0; 
+	color: #666; 
+}        
+#termsHtml .f p { 
+	width: 100%; 
+	margin: 0 0 13px; 
+	font-size: 1.3em; 
+	text-align: center;
+	margin-top: 20px;
+}
+#termsHtml .f p:after { 
+	content: ""; 
+	display: block; 
+	overflow: hidden; 
+	clear: both; 
+	height: 0; 
+}     
+#termsHtml .f textarea {
+	position: relative; 
+	width: 570px; 
+	height: 118px; 
+	min-height: 118px; 
+    padding: 3px 3px 3px 6px; 
+    border: 1px solid #ececec; 
+    border-top-color: #e1e1e1; 
+    border-left-color: #e1e1e1; 
+    background: #ececec; 
+    border-radius: 3px; 
+     -moz-border-radius: 3px; 
+     -webkit-border-radius: 3px;
+}        
+#termsHtml .scheme-g { 
+    margin: 26px 0 8px; 
+    padding: 0px; 
+    font-size: 1.2em; 
+    font-weight: 100;
+}        
+#termsHtml .button_big { 
+    float:right;
+    border: 0; 
+    position: relative;
+    bottom: 55px;
+    border-radius: 20px; 
+    display: inline-block; 
+    font-family: 'Sunflower', 'sans-serif';
+    font-size: 16px; 
+    font-weight: bold; 
+    line-height: 24px;
+    margin-left: 5px; 
+    padding: 8px 16px; 
+    text-decoration: none; 
+    color:#fff; 
+    background:#58B19F; 
+    text-shadow: 1px 1px 1px #2F9481; 
+      -webkit-transition: all 0.2s ease-out;
+}
+#termsHtml .button_big:hover {
+	cursor: pointer; 
+	background: #6CDAC6;
+}
+#termsHtml a {
+	position: relative;
+	float: right;
+	font-size: 12px;
+	margin: 0;
+	right: -100px;
+}

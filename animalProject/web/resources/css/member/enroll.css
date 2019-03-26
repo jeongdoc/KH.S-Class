@@ -1,0 +1,215 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Sunflower:300,500,700&amp;subset=korean");
+#admitbody {
+	background: url(../../images/APDT-Hero-2.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+#bodystyle {
+	font-family: 'Sunflower', 'sans-serif';
+}
+#tb {
+	width: 380px;
+	height: 550px;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	top: 50%;
+	left: 20%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 60px 35px;
+	border-radius: 20px;
+}
+#doglogo {
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	top: -15px;
+	left: 0;
+}
+#maintitle {
+	margin: 0; padding: 0 0 3px;
+	position: absolute;
+	top: 1%;
+	left: 60px;
+	font-size: 25px;
+}
+.mainInputForm {
+	position: relative;
+	display: block;
+	float: right;
+	border: none;
+}
+.mainInputForm:focus {
+	outline: none;
+}
+.inputLabel {
+	display: inline-block;
+	float: right;
+	font-size: 70.25%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.input_span {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+.inputForm {
+	z-index: 10;
+	padding: 0.75em 0.1em 0.25em;
+	width: 100%;
+	background: transparent;
+	color: #fff;
+}
+.labelJeong {
+	position: relative;
+	padding: 0;
+	width: 100%;
+	/* #A4A4A4 */
+	/* #848484 */
+	color: #F2F2F2;
+	text-align: left;
+}
+.labelJeong::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 85%;
+	height: 7px;
+	background: #3B4442;
+	-webkit-transform: scale3d(1, 0.4, 1);
+	transform: scale3d(1, 0.4, 1);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+	transition: transform 0.3s, background-color 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.labelJeong::after {
+	content: attr(data-content);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.75em 0.15em;
+	color: #58B19F;
+	opacity: 0;
+	-webkit-transform: translate3d(0, 50%, 0);
+	transform: translate3d(0, 50%, 0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	pointer-events: none;
+}
+.inputForm:focus + .labelJeong::before {
+	background-color: #58B19F;
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+.inputForm:focus + .labelJeong {
+	pointer-events: none;
+}
+.inputForm:focus + .labelJeong::after {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.span_second_jeong {
+	padding: 0.75em 0.15em;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.inputForm:focus + .labelJeong .span_second_jeong {
+	opacity: 0;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+}
+#tb input[type='submit'], input[type='button'], button, input[type='reset'] {
+	border: none;
+	outline: none;
+	background: #58B19F;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 20px;
+	height: 28px;
+	width: 45%;
+	margin: 5px;
+	font-family: 'Sunflower', 'sans-serif';
+}
+#tb input::placeholder {
+	color: #A2A5A4;
+	font-size: 8pt;
+	font-style: italic;
+	font-family: 'Sunflower', 'sans-serif';
+}
+#tb #chkId {
+	z-index: 9999;
+	font-size: 8pt;
+	position: absolute;
+	top: 50px;
+	height: 40px;
+	border-radius: 50%;
+	width: 12%;
+	left: 300px;
+}
+#tb #btnok {
+	z-index: 9999;
+	position: absolute;
+	top: 230px;
+	left: 300px;
+	height: 40px;
+	border-radius: 50%;
+	width: 12%;
+}
+#tb #sendbtn {
+	z-index: 9999;
+	position: absolute;
+	top: 31%;
+	left: 300px;
+	height: 40px;
+	border-radius: 50%;
+	width: 12%;
+}
+#tb input[type='submit']:hover {
+	cursor: pointer;
+	background: #93F0DD;
+	color: #fff;
+}
+#tb input[type='reset']:hover {
+	cursor: pointer;
+	background: #93F0DD;
+	color: #fff;
+}
+#tb input[type='button']:hover {
+	cursor: pointer;
+	background:#93F0DD;
+	color: #ff;
+}
+#tb button:hover {
+	cursor: pointer;
+	background: #93F0DD;
+	color: #fff;
+}
+#tb a {
+	position: absolute;
+	color: #fff;
+	font-size: 9pt;
+	bottom: 10px;
+	left: 250px;
+}
+#tb #nes {
+	font-size: 11px;
+}
+#tb .number2 {
+	z-index: -99;
+}

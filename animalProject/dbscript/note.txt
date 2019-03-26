@@ -1,0 +1,10 @@
+
+ver 1.5
+1. booking(예약)테이블에 신청자ID 추가하여 신청자 ID와 펫시터 ID가 있게 함
+2. booking 테이블, payment테이블에 userid, pet_no를 on delete cascade로 함
+3. manager, member, tipboard 기본 데이터 생성
+  manager의 id = manager   // password = pass01
+  member id= user01  //passowrd = pass01
+
+ver 1.6
+1. FAQ에 FAQ_TYPE 컬럼 추가

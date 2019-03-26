@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+.ps_reg_form {
+	position: absolute;
+	top: 12%;
+	left: 400px;
+	width: 1300px;
+	height: 700px;
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 20px;
+	display: none;
+	z-index: 1500;
+	grid-template-columns: 1fr 1fr 1.5fr;
+}
+.ps_reg_form .close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.ps_reg_form .close:hover {
+  opacity: 0.6;
+}
+.ps_reg_form .section1 {
+	display: grid;
+	grid-column:span 1;
+	margin: 20px;
+	padding: 0 50px; 
+}
+.ps_reg_form .section2 {
+	display: grid;
+	grid-column:span 1;
+	margin: 20px;
+	padding: 0 50px; 
+}
+.ps_reg_form .section3 {
+	display: grid;
+	grid-column:span 1;
+	margin: 30px;
+}
+.ps_reg_form p{
+	font-weight: 600;
+	color: white;
+}
+.ps_reg_form .ps_input{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+.ps_reg_form .section1 label {
+	color : white;
+}
+
+.ps_reg_form .section2 .image_box{
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: right;
+	justify-content: space-between;
+}
+
+.ps_reg_form .section2 .image_box .image_box_pic {
+	width: 90%;
+	margin-left: 5%;
+	height: 180px;
+}
+.ps_reg_form .section3 #reg_map_box{
+	border:1px solid rgba(255,255,255,0.2);
+	height: 300px;
+}
+.ps_reg_form input[type="file"]{
+	display:none;
+}
+
+.ps_reg_form #fake-file-btn, #post-search{
+  display:block;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 30px;
+  background: #58B19F;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+#ppics_upload {
+  display:block;
+  border: none;
+  outline: none;
+  width: 80%;
+  height: 30px;
+  background: #58B19F;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  margin-left: 10%;
+}
+
+#ppics_upload:hover{
+	cursor: pointer;
+	opacity:0.8;
+}
+
+.ps_reg_form #fake-file-btn:hover, #post-search:hover{
+	cursor: pointer;
+	opacity:0.8;
+}
+
+#file-text, #ppics-text {
+	color : white;
+}
+.section3 .ppics_list{
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	height: 120px;
+}
+.ppics_list .pp1, .pp2, .pp3 {
+	border: 1px solid rgba(255,255,255,0.5);
+	width: 30%;
+}
+
+.ps_reg_form #submit-btn {
+	margin-left: 10%;
+	background: #747d8c;
+	color: white;
+	width: 400px;
+	height: 40px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	border-radius: 10px; 
+}
+
+.ps_reg_form #submit-btn:hover{
+	opacity: 0.8;
+}
+
+
