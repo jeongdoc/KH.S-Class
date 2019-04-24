@@ -1,0 +1,5 @@
+package org.kh.first.test.controller;
+
+public class FileDownloadView {
+
+}

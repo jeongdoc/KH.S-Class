@@ -1,0 +1,10 @@
+package org.kh.first.member.model.service;
+
+public interface MemberService {
+	//only can use abstract methods
+	//public abstract returnType methodName(Type variable);
+	Member selectLogin(Member member) {
+		
+	}
+
+}

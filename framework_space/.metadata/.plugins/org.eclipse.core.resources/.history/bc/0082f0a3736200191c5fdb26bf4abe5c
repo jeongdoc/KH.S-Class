@@ -1,0 +1,11 @@
+package org.kh.first.test.model.vo;
+
+import java.io.Serializable;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Sample implements Serializable {
+	private static final long serialVersionUID = -4758246891366492225L;
+
+}

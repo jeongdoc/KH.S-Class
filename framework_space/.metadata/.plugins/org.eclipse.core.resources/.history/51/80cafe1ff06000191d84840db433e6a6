@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeMapper">
+
+	<resultMap id="resultNotice" type="Notice">
+		<id property="noticeNo" column="noticeno" />
+		<result property="noticeTitle" column="noticetitle" />
+		<result property="noticeDate" column="noticedate" />
+		<result property="noticeWriter" column="noticeWriter" />
+		<result property="noticeContent" column="noticecontent" />
+		<result property="originalFilePath" column="original_filepath" />
+		<result property="renameFilePath" column="rename_filepath" />
+	</resultMap>
+	
+	<select id="selectMap" resultMap="resultNotice">
+		select * from notice order by noticeno desc
+	</select>
+	<select id="selectOne" parameterType="_int" resultMap="resultNotice">
+		select * from notice where noticeno = #{noticeNo}
+	</select>
+	<insert id="insertNotice" parameterType="Notice">
+	<choose>
+		<when test="originalFilePath == null">
+		insert into notice 
+					(noticeno, noticetitle, noticedate, noticewriter, noticecontent, original_filepath, rename_filepath) values 
+									((select max(noticeno)+1 from notice),#{noticeTitle},
+									default,#{noticeWriter},#{noticeContent},
+									<!-- #{originalFilePath,jdbcType=VARCHAR}, -->
+									#{renameFilePath,jdbcType=VARCHAR})
+		</when>
+		<otherwise>
+		insert into notice 
+					(noticeno, noticetitle, noticedate, noticewriter, noticecontent, original_filepath, rename_filepath) values 
+									((select max(noticeno)+1 from notice),#{noticeTitle},
+									default,#{noticeWriter},#{noticeContent}
+									<if test="originalFilePath != null">,
+									#{originalFilePath},
+									<!-- #{originalFilePath,jdbcType=VARCHAR}, -->
+									#{renameFilePath,jdbcType=VARCHAR})
+									</if>
+		</otherwise>
+	</choose>
+		<!-- insert into notice 
+					(noticeno, noticetitle, noticedate, noticewriter, noticecontent, original_filepath, rename_filepath) values 
+									((select max(noticeno)+1 from notice),#{noticeTitle},
+									default,#{noticeWriter},#{noticeContent}
+									<if test="originalFilePath != null">,
+									#{originalFilePath},
+									#{originalFilePath,jdbcType=VARCHAR},
+									#{renameFilePath,jdbcType=VARCHAR})
+									</if> -->
+	</insert>
+	<sql id='filepath'>
+		<if test="originalFilePath != null">
+			,original_filepath = #{originalFilePath},
+			rename_filepath = #{renameFilePath}
+		</if>
+	</sql>
+	<update id="updateNotice" parameterType="Notice">
+		update notice set noticetitle = #{noticeTitle}, noticecontent = #{noticeContent}, 
+										<include refid="filepath"/>
+										<!-- original_filepath = #{originalFilePath,jdbcType=VARCHAR}, 
+										rename_filepath = #{renameFilePath,jdbcType=VARCHAR}  -->
+										where noticeno = #{noticeNo}
+	</update>
+	<delete id="deleteNotice" parameterType="_int">
+		delete from notice where noticeno = #{noticeNo}
+	</delete>
+	<select id="selectSearchWriter" parameterType="string" resultMap="resultNotice">
+		select * from notice where noticewriter like '%'||#{noticeWriter}||'%'
+	</select>
+	<select id="selectSearchDate" parameterType="notice.model.vo.SearchDate" resultMap="resultNotice">
+		select * from notice where noticedate between #{begin} and #{end}
+	</select>
+	<select id="selectSearchTitle" parameterType="string" resultMap="resultNotice">
+		select * from notice where noticetitle like '%'||#{noticeTitle}||'%'
+	</select>
+	<select id="selectTop5Write" resultMap="resultNotice" >
+	<![CDATA[
+		select * from 
+		(select rownum rnum, noticeno, noticetitle, noticedate 
+		from (select * from notice order by noticedate desc)) 
+		where rnum >= 1 and rnum <= 5
+	]]>
+	</select>
+
+</mapper>

@@ -1,0 +1,8 @@
+package org.kh.first.test.controller;
+
+import org.springframework.stereotype.Component;
+
+@Component("filedown")
+public class FileDownloadView {
+
+}

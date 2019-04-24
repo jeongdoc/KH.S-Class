@@ -1,0 +1,169 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FirstTest</title>
+<!-- <script type='text/javascript' src='../../../resources/js/jquery-3.3.1.min.js'></script> -->
+<script type='text/javascript' src='${ pageContext.request.contextPath }/resources/js/jquery-3.3.1.min.js'></script>
+<script type="text/javascript">
+	$(function(){
+		$('#test1').on('click', function(){
+			$.ajax({
+				url: 'test1.do',
+				data: { name: '박혁거세', age: 4},
+				type: 'post',
+				success: function(result) {
+					if(result == 'ok') {
+						alert('success!');
+						console.log('result : ' + result);
+						$('#d1').html('<h5>'+result+'</h5');
+					} else {
+						alert('fail!');
+					}
+				}, // success
+				error: function(request, status, errorData) {
+					console.log('error code : ' + request.status + '\n' + 'message' + request.responseTest + '\n'
+								+ 'error: ' + errorData);
+				} // error
+			}); //ajax
+		}); //click
+		$('#test2').on('click', function(){
+			$.ajax({
+				url: "test2.do",
+				type: "post",
+				dataType: "json",
+				success: function(jsonResult) {
+					console.log("jsonResult : " + jsonResult);
+					$('#d2').html('번호 :' + jsonResult.no + '<br>작성자 : ' + jsonResult.writer 
+								+ '<br>제목 : ' + decodeURIComponent(jsonResult.title.replace(/\+/gi, ' '))
+								+ '<br>내용 : ' + decodeURIComponent(jsonResult.content.replace(/\+/gi, ' ')));
+				},
+				error: function(request, status, errorData) {
+					console.log('error code : ' + request.status + '\n' + 'message' + request.responseTest + '\n'
+							+ 'error: ' + errorData);
+				}
+			}); //ajax
+		}); //click
+		$('#test3').on('click', function(){
+			//컨트롤러에서 list를 json배열로 받아서 출력
+			$.ajax({
+				url: 'test3.do',
+				type: 'post',
+				dataType: 'json',
+				success: function(obj) {
+					console.log('obj : ' + obj);
+					var objStr = JSON.stringify(obj);
+					var jsonObj = JSON.parse(objStr);
+					var outValues = $('#d3').html();
+					for(var i in jsonObj.list) {
+						outValues += jsonObj.list[i].userid + ', ' + jsonObj.list[i].userpwd + ', ' 
+						+ decodeURIComponent(jsonObj.list[i].username) + ', ' + jsonObj.list[i].age + ', '
+						+ jsonObj.list[i].email + ', ' + jsonObj.list[i].phone + '<br>';
+					}
+					$('#d3').html(outValues);
+				},
+				error: function(request, status, errorData) {
+					console.log('error code : ' + request.status + '\n' + 'message' + request.responseTest + '\n'
+							+ 'error: ' + errorData);
+				}
+			}); // ajax
+		}); //click
+		$('#test4').on('click', function(){
+			$.ajax({
+				url: 'test4.do',
+				type: 'post',
+				dataType: 'json',
+				success: function(jsonObj) {
+					console.log(jsonObj);
+					$('#d4').html('받은 Map안의 객체 정보 확인<br>이름 : ' 
+							+ decodeURIComponent(jsonObj.hashMap.samp.name)
+							+ '나이 : ' + jsonObj.hashMap.samp.age);
+				},
+				error: function(request, status, errorData) {
+					console.log('error code : ' + request.status + '\n' + 'message' + request.responseTest + '\n'
+							+ 'error: ' + errorData);
+				}
+			});
+		});
+		$('#test5').on('click', function(){
+			var job = new Object();
+			job.name = '안정은';
+			job.age = 28;
+			/* var job = {
+				name: '안정은',
+				age: 28;
+			}  */
+			console.log('job : ' + job);
+			$.ajax({
+				url: 'test5.do',
+				type: 'post',
+				data: JSON.stringify(job),
+				contentType: 'application/json; charset=utf-8',
+				success: function (result) {
+					alert(result + ' 전송 성공!');
+					$('#d5').html('json객체 값 : ' + job.name + ', ' + job.age);
+				},
+				error: function(request, status, errorData) {
+					console.log('error code : ' + request.status + '\n' + 'message' + request.responseTest + '\n'
+							+ 'error: ' + errorData);
+				}
+			});//ajax
+		});//click
+		$('#test6').on('click', function(){
+			//var jarr = new Array(5); -> index  사용
+			//var jarr = new Array(); -> push(), pop() 사용
+			var jarr = [
+				{'name':'안정은','age':28}
+				{'name':'안정','age':25}
+				{'name':'안','age':22}
+				];
+			$.ajax({
+				url: 'test6.do',
+				type: 'post',
+				contentType: 'application/json; charset=utf-8',
+				data: JSON.stringify(jarr),
+				success: function(re) {
+					alert('전송성공~ : ' + re);
+					var values = $('#d6').html();
+				},
+				error: function(request, status, errorData) {
+					console.log('error code : ' + request.status + '\n' + 'message' + request.responseTest + '\n'
+							+ 'error: ' + errorData);
+				}
+			});//ajax
+		}); //click
+	});
+</script>
+</head>
+<body>
+<h1>Spring framework ajax test</h1>
+<ol>
+	<li>서버쪽 컨트롤러로 값보내기 &nbsp; <button id='test1'>test1</button></li>
+	<p>
+		<div id='d1'></div>
+	</p>
+	<li>컨트롤러에서 보낸 json 출력 &nbsp; <button id='test2'>test2</button></li>
+	<p>
+		<div id='d2'></div>
+	</p>
+	<li>컨트롤러에서 보낸 list를 json 배열로 출력 &nbsp; <button id='test3'>test3</button></li>
+	<p>
+		<div id='d3'></div>
+	</p>
+	<li>컨트로러에서 보낸 map 출력 &nbsp; <button id='test4'>test4</button></li>
+	<p>
+		<div id='d4'></div>
+	</p>
+	<li>컨트롤러에 json 보내기 &nbsp; <button id='test5'>test5</button></li>
+	<p>
+		<div id='d5'></div>
+	</p>
+	<li>컨트롤러에 json 배열 보내기 &nbsp; <button id='test6'>test6</button></li>
+	<p>
+		<div id='d6'></div>
+	</p>
+</ol>
+</body>
+</html>

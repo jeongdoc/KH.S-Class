@@ -1,0 +1,7 @@
+package org.kh.first.test.model.vo;
+
+import java.io.Serializable;
+
+public class Sample implements Serializable {
+
+}

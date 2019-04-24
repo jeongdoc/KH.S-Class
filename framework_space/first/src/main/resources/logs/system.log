@@ -1,0 +1,195 @@
+[20:07:35][INFO ][ContextLoader.java:270]: - Root WebApplicationContext: initialization started
+[20:07:35][INFO ][AbstractApplicationContext.java:589]: - Refreshing Root WebApplicationContext: startup date [Tue Apr 23 20:07:35 KST 2019]; root of context hierarchy
+[20:07:36][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from class path resource [root-context.xml]
+[20:07:37][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/spring-security.xml]
+[20:07:38][INFO ][ContextLoader.java:310]: - Root WebApplicationContext: initialization completed in 2687 ms
+[20:07:38][INFO ][FrameworkServlet.java:494]: - FrameworkServlet 'appServlet': initialization started
+[20:07:38][INFO ][AbstractApplicationContext.java:589]: - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:07:38 KST 2019]; parent: Root WebApplicationContext
+[20:07:38][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[20:07:39][INFO ][AutowiredAnnotationBeanPostProcessor.java:154]: - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/main.do],methods=[GET]}" onto public java.lang.String org.kh.first.HomeController.home()
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/logout.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.logoutMethod(javax.servlet.http.HttpServletRequest)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/minsert.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.insertMember(org.kh.first.member.model.vo.Member,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupdate.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.updateMember(org.kh.first.member.model.vo.Member,org.springframework.ui.Model)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupview.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.updateMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/enroll.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.moveEnrollPage()
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/myinfo.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.selectMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/login.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.loginMethod(org.kh.first.member.model.vo.Member,javax.servlet.http.HttpSession,org.springframework.web.bind.support.SessionStatus,org.springframework.ui.Model)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mdel.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.memberDelete(org.springframework.ui.Model,java.lang.String)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test6.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test6Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test2.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.test2Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fileUp.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testFileUpload(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile) throws java.lang.IllegalStateException,java.io.IOException
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveAjax.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveAjaxPage()
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveFile.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveFilePage()
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test1.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test1Method(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test4.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.test4Method(org.springframework.web.servlet.ModelAndView) throws java.io.UnsupportedEncodingException
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test5.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test5Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test3.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test3Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/testView.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveCryptoPage()
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/bcrypto.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testBcryptoPassword(java.lang.String)
+[20:07:40][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fdown.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.fileDownMethod(javax.servlet.http.HttpServletRequest,java.lang.String)
+[20:07:41][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:07:38 KST 2019]; parent: Root WebApplicationContext
+[20:07:41][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:07:38 KST 2019]; parent: Root WebApplicationContext
+[20:07:41][INFO ][AbstractUrlHandlerMapping.java:373]: - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[20:07:42][INFO ][FrameworkServlet.java:513]: - FrameworkServlet 'appServlet': initialization completed in 3727 ms
+[20:07:52][INFO ][HomeController.java:22]: - Welcome home!
+[20:08:00][INFO ][MemberController.java:38]: - login.do run.
+[20:08:03][INFO ][MemberController.java:54]: - logout.do
+[20:08:27][INFO ][MemberController.java:38]: - login.do run.
+[20:08:31][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:08:44][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:10:34][INFO ][AbstractApplicationContext.java:989]: - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:07:38 KST 2019]; parent: Root WebApplicationContext
+[20:10:34][INFO ][AbstractApplicationContext.java:989]: - Closing Root WebApplicationContext: startup date [Tue Apr 23 20:07:35 KST 2019]; root of context hierarchy
+[20:10:48][INFO ][ContextLoader.java:270]: - Root WebApplicationContext: initialization started
+[20:10:48][INFO ][AbstractApplicationContext.java:589]: - Refreshing Root WebApplicationContext: startup date [Tue Apr 23 20:10:48 KST 2019]; root of context hierarchy
+[20:10:48][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from class path resource [root-context.xml]
+[20:10:49][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/spring-security.xml]
+[20:10:50][INFO ][ContextLoader.java:310]: - Root WebApplicationContext: initialization completed in 2211 ms
+[20:10:50][INFO ][FrameworkServlet.java:494]: - FrameworkServlet 'appServlet': initialization started
+[20:10:50][INFO ][AbstractApplicationContext.java:589]: - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:10:50 KST 2019]; parent: Root WebApplicationContext
+[20:10:50][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[20:10:51][INFO ][AutowiredAnnotationBeanPostProcessor.java:154]: - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/main.do],methods=[GET]}" onto public java.lang.String org.kh.first.HomeController.home()
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/login.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.loginMethod(org.kh.first.member.model.vo.Member,javax.servlet.http.HttpSession,org.springframework.web.bind.support.SessionStatus,org.springframework.ui.Model)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/minsert.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.insertMember(org.kh.first.member.model.vo.Member,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupview.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.updateMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupdate.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.updateMember(org.kh.first.member.model.vo.Member,org.springframework.ui.Model)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/logout.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.logoutMethod(javax.servlet.http.HttpServletRequest)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mdel.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.memberDelete(org.springframework.ui.Model,java.lang.String)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/enroll.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.moveEnrollPage()
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/myinfo.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.selectMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/bcrypto.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testBcryptoPassword(java.lang.String)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveAjax.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveAjaxPage()
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/testView.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveCryptoPage()
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveFile.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveFilePage()
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test2.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.test2Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test1.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test1Method(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test3.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test3Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test6.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test6Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fdown.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.fileDownMethod(javax.servlet.http.HttpServletRequest,java.lang.String)
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fileUp.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testFileUpload(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile) throws java.lang.IllegalStateException,java.io.IOException
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test4.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.test4Method(org.springframework.web.servlet.ModelAndView) throws java.io.UnsupportedEncodingException
+[20:10:52][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test5.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test5Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:10:53][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:10:50 KST 2019]; parent: Root WebApplicationContext
+[20:10:54][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:10:50 KST 2019]; parent: Root WebApplicationContext
+[20:10:54][INFO ][AbstractUrlHandlerMapping.java:373]: - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[20:10:54][INFO ][FrameworkServlet.java:513]: - FrameworkServlet 'appServlet': initialization completed in 3822 ms
+[20:11:08][INFO ][HomeController.java:22]: - Welcome home!
+[20:11:10][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:11:22][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:11:39][INFO ][AbstractApplicationContext.java:989]: - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:10:50 KST 2019]; parent: Root WebApplicationContext
+[20:11:39][INFO ][AbstractApplicationContext.java:989]: - Closing Root WebApplicationContext: startup date [Tue Apr 23 20:10:48 KST 2019]; root of context hierarchy
+[20:11:55][INFO ][ContextLoader.java:270]: - Root WebApplicationContext: initialization started
+[20:11:55][INFO ][AbstractApplicationContext.java:589]: - Refreshing Root WebApplicationContext: startup date [Tue Apr 23 20:11:55 KST 2019]; root of context hierarchy
+[20:11:55][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from class path resource [root-context.xml]
+[20:11:56][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/spring-security.xml]
+[20:11:58][INFO ][ContextLoader.java:310]: - Root WebApplicationContext: initialization completed in 2549 ms
+[20:11:58][INFO ][FrameworkServlet.java:494]: - FrameworkServlet 'appServlet': initialization started
+[20:11:58][INFO ][AbstractApplicationContext.java:589]: - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:11:58 KST 2019]; parent: Root WebApplicationContext
+[20:11:58][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[20:11:59][INFO ][AutowiredAnnotationBeanPostProcessor.java:154]: - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/main.do],methods=[GET]}" onto public java.lang.String org.kh.first.HomeController.home()
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/enroll.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.moveEnrollPage()
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/login.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.loginMethod(org.kh.first.member.model.vo.Member,javax.servlet.http.HttpSession,org.springframework.web.bind.support.SessionStatus,org.springframework.ui.Model)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/minsert.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.insertMember(org.kh.first.member.model.vo.Member,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/logout.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.logoutMethod(javax.servlet.http.HttpServletRequest)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/myinfo.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.selectMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupview.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.updateMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupdate.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.updateMember(org.kh.first.member.model.vo.Member,org.springframework.ui.Model)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mdel.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.memberDelete(org.springframework.ui.Model,java.lang.String)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/bcrypto.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testBcryptoPassword(java.lang.String)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveFile.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveFilePage()
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/testView.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveCryptoPage()
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test1.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test1Method(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test2.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.test2Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveAjax.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveAjaxPage()
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test4.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.test4Method(org.springframework.web.servlet.ModelAndView) throws java.io.UnsupportedEncodingException
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test3.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test3Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test6.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test6Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test5.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test5Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fdown.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.fileDownMethod(javax.servlet.http.HttpServletRequest,java.lang.String)
+[20:11:59][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fileUp.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testFileUpload(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile) throws java.lang.IllegalStateException,java.io.IOException
+[20:12:00][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:11:58 KST 2019]; parent: Root WebApplicationContext
+[20:12:01][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:11:58 KST 2019]; parent: Root WebApplicationContext
+[20:12:01][INFO ][AbstractUrlHandlerMapping.java:373]: - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[20:12:01][INFO ][FrameworkServlet.java:513]: - FrameworkServlet 'appServlet': initialization completed in 3700 ms
+[20:12:04][INFO ][AbstractApplicationContext.java:989]: - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:11:58 KST 2019]; parent: Root WebApplicationContext
+[20:12:04][INFO ][AbstractApplicationContext.java:989]: - Closing Root WebApplicationContext: startup date [Tue Apr 23 20:11:55 KST 2019]; root of context hierarchy
+[20:13:16][INFO ][ContextLoader.java:270]: - Root WebApplicationContext: initialization started
+[20:13:17][INFO ][AbstractApplicationContext.java:589]: - Refreshing Root WebApplicationContext: startup date [Tue Apr 23 20:13:17 KST 2019]; root of context hierarchy
+[20:13:17][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from class path resource [root-context.xml]
+[20:13:18][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/spring-security.xml]
+[20:13:19][INFO ][ContextLoader.java:310]: - Root WebApplicationContext: initialization completed in 2218 ms
+[20:13:19][INFO ][FrameworkServlet.java:494]: - FrameworkServlet 'appServlet': initialization started
+[20:13:19][INFO ][AbstractApplicationContext.java:589]: - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:13:19 KST 2019]; parent: Root WebApplicationContext
+[20:13:19][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[20:13:20][INFO ][AutowiredAnnotationBeanPostProcessor.java:154]: - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/main.do],methods=[GET]}" onto public java.lang.String org.kh.first.HomeController.home()
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/minsert.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.insertMember(org.kh.first.member.model.vo.Member,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/login.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.loginMethod(org.kh.first.member.model.vo.Member,javax.servlet.http.HttpSession,org.springframework.web.bind.support.SessionStatus,org.springframework.ui.Model)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/logout.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.logoutMethod(javax.servlet.http.HttpServletRequest)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mdel.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.memberDelete(org.springframework.ui.Model,java.lang.String)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/enroll.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.moveEnrollPage()
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/myinfo.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.selectMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupview.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.updateMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupdate.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.updateMember(org.kh.first.member.model.vo.Member,org.springframework.ui.Model)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/bcrypto.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testBcryptoPassword(java.lang.String)
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveFile.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveFilePage()
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveAjax.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveAjaxPage()
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/testView.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveCryptoPage()
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test2.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.test2Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test3.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test3Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test5.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test5Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test1.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test1Method(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test6.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test6Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fileUp.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testFileUpload(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile) throws java.lang.IllegalStateException,java.io.IOException
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test4.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.test4Method(org.springframework.web.servlet.ModelAndView) throws java.io.UnsupportedEncodingException
+[20:13:20][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fdown.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.fileDownMethod(javax.servlet.http.HttpServletRequest,java.lang.String)
+[20:13:22][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:13:19 KST 2019]; parent: Root WebApplicationContext
+[20:13:22][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:13:19 KST 2019]; parent: Root WebApplicationContext
+[20:13:22][INFO ][AbstractUrlHandlerMapping.java:373]: - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[20:13:22][INFO ][FrameworkServlet.java:513]: - FrameworkServlet 'appServlet': initialization completed in 3525 ms
+[20:13:30][INFO ][HomeController.java:22]: - Welcome home!
+[20:13:31][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:13:41][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:14:33][INFO ][AbstractApplicationContext.java:989]: - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:13:19 KST 2019]; parent: Root WebApplicationContext
+[20:14:33][INFO ][AbstractApplicationContext.java:989]: - Closing Root WebApplicationContext: startup date [Tue Apr 23 20:13:17 KST 2019]; root of context hierarchy
+[20:14:57][INFO ][ContextLoader.java:270]: - Root WebApplicationContext: initialization started
+[20:14:58][INFO ][AbstractApplicationContext.java:589]: - Refreshing Root WebApplicationContext: startup date [Tue Apr 23 20:14:58 KST 2019]; root of context hierarchy
+[20:14:58][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from class path resource [root-context.xml]
+[20:14:59][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/spring-security.xml]
+[20:15:00][INFO ][ContextLoader.java:310]: - Root WebApplicationContext: initialization completed in 2422 ms
+[20:15:00][INFO ][FrameworkServlet.java:494]: - FrameworkServlet 'appServlet': initialization started
+[20:15:00][INFO ][AbstractApplicationContext.java:589]: - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:15:00 KST 2019]; parent: Root WebApplicationContext
+[20:15:00][INFO ][XmlBeanDefinitionReader.java:316]: - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+[20:15:01][INFO ][AutowiredAnnotationBeanPostProcessor.java:154]: - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/main.do],methods=[GET]}" onto public java.lang.String org.kh.first.HomeController.home()
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/login.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.loginMethod(org.kh.first.member.model.vo.Member,javax.servlet.http.HttpSession,org.springframework.web.bind.support.SessionStatus,org.springframework.ui.Model)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/logout.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.logoutMethod(javax.servlet.http.HttpServletRequest)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/enroll.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.moveEnrollPage()
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/myinfo.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.selectMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mdel.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.memberDelete(org.springframework.ui.Model,java.lang.String)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/minsert.do],methods=[POST]}" onto public java.lang.String org.kh.first.member.controller.MemberController.insertMember(org.kh.first.member.model.vo.Member,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupview.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.member.controller.MemberController.updateMember(org.springframework.web.servlet.ModelAndView,java.lang.String)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/mupdate.do]}" onto public java.lang.String org.kh.first.member.controller.MemberController.updateMember(org.kh.first.member.model.vo.Member,org.springframework.ui.Model)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/bcrypto.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testBcryptoPassword(java.lang.String)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveAjax.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveAjaxPage()
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test2.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.test2Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test3.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test3Method(javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/moveFile.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveFilePage()
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test1.do],methods=[POST]}" onto public void org.kh.first.test.controller.TestController.test1Method(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/testView.do]}" onto public java.lang.String org.kh.first.test.controller.TestController.moveCryptoPage()
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fileUp.do],methods=[POST]}" onto public java.lang.String org.kh.first.test.controller.TestController.testFileUpload(org.kh.first.test.model.vo.Sample,javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile) throws java.lang.IllegalStateException,java.io.IOException
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/fdown.do]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.fileDownMethod(javax.servlet.http.HttpServletRequest,java.lang.String)
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test5.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test5Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test4.do],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView org.kh.first.test.controller.TestController.test4Method(org.springframework.web.servlet.ModelAndView) throws java.io.UnsupportedEncodingException
+[20:15:02][INFO ][AbstractHandlerMethodMapping.java:548]: - Mapped "{[/test6.do],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.kh.first.test.controller.TestController.test6Method(java.lang.String) throws org.json.simple.parser.ParseException
+[20:15:03][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:15:00 KST 2019]; parent: Root WebApplicationContext
+[20:15:03][INFO ][RequestMappingHandlerAdapter.java:567]: - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:15:00 KST 2019]; parent: Root WebApplicationContext
+[20:15:03][INFO ][AbstractUrlHandlerMapping.java:373]: - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+[20:15:04][INFO ][FrameworkServlet.java:513]: - FrameworkServlet 'appServlet': initialization completed in 3690 ms
+[20:15:11][INFO ][HomeController.java:22]: - Welcome home!
+[20:15:12][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:15:23][INFO ][MemberController.java:102]: - myinfo.do run.
+[20:17:59][INFO ][AbstractApplicationContext.java:989]: - Closing WebApplicationContext for namespace 'appServlet-servlet': startup date [Tue Apr 23 20:15:00 KST 2019]; parent: Root WebApplicationContext
+[20:17:59][INFO ][AbstractApplicationContext.java:989]: - Closing Root WebApplicationContext: startup date [Tue Apr 23 20:14:58 KST 2019]; root of context hierarchy

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC
+"-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">	
+	<resultMap id="boardResult" type="Board">
+		<id property="boardNum" column="board_num" />
+		<result property="boardWriter" column="board_writer" />
+		<result property="boardTitle" column="board_title" />
+		<result property="boardContent" column="board_content" />
+		<result property="boardOriginalFileName" column="board_original_filename" />
+		<result property="boardRenameFileName" column="board_rename_filename" />
+		<result property="boardRef" column="board_ref" />
+		<result property="boardReplyRef" column="board_reply_ref" />
+		<result property="boardReplySeq" column="board_reply_seq" />
+		<result property="boardReadcount" column="board_readcount" />
+		<result property="boardDate" column="board_date" />
+	</resultMap>
+	
+	<select id="selectBoard" parameterType="_int" resultMap="boardResult">
+		select * from board where board_num = #{boardNum}
+	</select>
+	<update id="addReadcount" parameterType="_int" >
+		update board set board_readcount = board_readcount+1 where board_num = #{boardNum}
+	</update>
+	<insert id="insertBoard" parameterType="Board">
+		String seqQuery = "(select max(board_num)+1 from board)";
+		insert into board values 
+		((select max(board_num)+1 from board),
+		  #{boardTitle},#{boardTitle},#{boardContent},#{boardOriginalFileName},#{boardRenameFileName},
+		 (select max(board_num)+1 from board),0,0,0,default,default)
+	</insert>
+	<update id="updateReplySeq" parameterType="Board">
+		<![CDATA[
+			update board set board_reply_seq = board_reply_seq + 1
+						 where board_ref = #{boardRef} and board_reply_seq > #{boardReplySeq}
+		]]> 
+	</update>
+	<update id="updateReply" parameterType="Board">
+		update board set board_title = #{boardTitle}, board_content = #{boardContent} where board_num = #{boardNum}
+	</update>
+	<update id="updateBoard" parameterType="Board">
+		update board set board_title = #{boardTitle}, board_content = #{boardContent},
+					 board_original_filename = #{boardOriginalFileName, jdbcType=VARCHAR}, 
+					 board_rename_filename = #{boardRenameFileName, jdbcType=VARCHAR}
+		  	 	 	 where board_num = #{boardNum}
+	</update>
+	<delete id="deleteBoard" parameterType="_int">
+		delete from board where board_num = #{boardNum}
+	</delete>
+	<select id="selectReadCountTop5" resultMap="boardResult">
+		<![CDATA[
+			select * from
+			(select rownum rnum, board_num, board_title, board_readcount
+			from (select * from board where board_reply_lev = 0 order by board_readcount desc))
+			where rnum >= 1 and rnum <= 5
+		]]>
+	</select>
+	<select id="getListCount" resultType="_int">
+		select count(*) from board
+	</select>
+	<select id="selectList" resultMap="boardResult">
+	<!-- parameterType="org.apache.ibatis.session.RowBounds" -->
+		<![CDATA[
+			select * from
+			(select rownum rnum, board_num, board_writer, board_title, board_content,
+			board_original_filename, board_rename_filename, board_ref,
+			board_reply_ref, board_reply_lev, board_reply_seq, board_readcount, board_date from
+			(select * from board
+			order by board_ref desc, board_reply_seq, board_reply_ref desc, board_reply_lev))
+			where rnum >= #{offset} and rnum <= #{limit}
+		]]>
+	</select>
+	<select id="selectTitleList" parameterType="string" resultMap="boardResult">
+		<![CDATA[
+			select * from
+			(select rownum rnum, board_num, board_writer, board_title, board_content,
+			 board_original_filename, board_rename_filename, board_ref,
+			 board_reply_ref, board_reply_lev, board_reply_seq, board_readcount, board_date from 
+			(select * from board where board_title like '%'||#{keyword}||'%'
+			 order by board_ref desc, board_reply_seq, board_reply_ref desc, board_reply_lev)) 
+			 where rnum >= #{offset} and rnum <= #{limit} 
+		]]>
+	</select>
+
+</mapper>

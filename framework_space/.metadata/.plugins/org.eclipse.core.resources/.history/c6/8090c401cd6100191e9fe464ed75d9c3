@@ -1,0 +1,184 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" errorPage="../common/error.jsp"%>
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
+<%
+	/* Member loginUser = (Member)session.getAttribute("loginUser");
+	Member member = (Member)request.getAttribute("member"); */
+	//취미 checked처리
+	/* String []hobbies = member.getHobby().split(",");
+	String []checked = new String[9];
+	for(String s : hobbies) {
+		switch(s) {
+		case "game" : checked[0] = "checked"; break;
+		case "music" : checked[1] = "checked"; break;
+		case "reading" : checked[2] = "checked"; break;
+		case "climb" : checked[3] = "checked"; break;
+		case "sport" : checked[4] = "checked"; break;
+		case "movie" : checked[5] = "checked"; break;
+		case "travle" : checked[6] = "checked"; break;
+		case "sing" : checked[7] = "checked"; break;
+		case "aso" : checked[8] = "checked"; break;
+		
+		}
+	} */
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../../resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	//암호 확인입력상자의 focus가 사라졌을 때
+	$('#userpwd2').blur(function() {
+		console.log('포커스사라짐');
+		var pwd1=$('#userpwd1').val();
+		var pwd2=$('#userpwd2').val();
+		
+		if(pwd1!=pwd2) {
+			alert('암호가 일치하지 않습니다.\n'+'다시 입력하세요');
+			$('#userpwd1').select();
+		}
+	});
+});
+function moveUpdatePage() {
+	location.href='mupview.do?userid=${ member.userid }';
+}
+</script>
+</head>
+<body>
+<h1>secondWebProject</h1>
+<%-- <c:if test='${ not empty sessionScope.loginUser and sessionScope.loginUser eq "admin" }'>
+	<%@ include file="../common/adminHeader.jsp" %>
+</c:if>
+<c:if test='${ empty sessionScope.loginUser or sessionScope.loginUser ne "admin" }'>
+	<%@ include file="../common/header.jsp" %>
+</c:if> --%>
+<c:if test='${ not empty sessionScope.loginMember and sessionScope.loginMember.userid eq "admin" }'>
+	<c:import url='../common/header.jsp'/>
+</c:if>
+<c:if test='${ empty sessionScope.loginMember or sessionScope.loginMember.userid ne "admin" }'>
+	<c:import url='../common/header.jsp'/>
+</c:if>
+<br>
+<h1 align="center">${ member.username }님의 상세정보</h1>
+<br>
+<form action="myinfo.do" method="post">
+<table width="650" align="center">
+	<tr height="40">
+		<th width="150">아이디</th>
+		<td><input type="text" name="userid" id="userid" readonly value="${ member.userid }"/>
+		&nbsp; </td>
+	</tr>
+	<tr height="40">
+		<th width="150">이름</th>
+		<td><input type="text" name="username" readonly value="${ member.username }"/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">암호</th>
+		<td><input type="password" name="userpwd" id="userpwd1" value="${ member.userpwd }"/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">암호확인</th>
+		<td><input type="password" id="userpwd2" value="${ member.userpwd }"/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">성별</th>
+		<td>
+		<c:if test='${ requestScope.member.gender eq "M" }'>
+			<input type="radio" name="gender" value="M" checked/>남자 &nbsp;
+			<input type="radio" name='gender' value='F'/>여자
+		</c:if>
+		<c:if test='${ requestScope.member.gender eq "F" }'>
+			<input type="radio" name="gender" value="M"/>남자 &nbsp;
+			<input type="radio" name='gender' value='F' checked/>여자
+		</c:if>
+		</td>
+	</tr>
+	<tr height="40">
+		<th width="150">나이</th>
+		<td><input type="number" name='age' min='19' max='100' value="${ member.age }"/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">전화번호</th>
+		<td><input type='tel' name='phone' value="${ member.phone }"/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">이메일</th>
+		<td><input type='email' name='email' value="${ member.email }"/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">취미</th>
+		<td>
+		<c:forTokens items='${ member.hobby }' delims=',' var='hd'>
+			<c:if test='${ hd eq "game" }'>
+				<c:set var='checked0' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "music" }'>
+				<c:set var='checked1' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "reading" }'>
+				<c:set var='checked2' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "climb" }'>
+				<c:set var='checked3' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "sport" }'>
+				<c:set var='checked4' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "movie" }'>
+				<c:set var='checked5' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "travle" }'>
+				<c:set var='checked6' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "sing" }'>
+				<c:set var='checked7' value='checked'/>
+			</c:if>
+			<c:if test='${ hd eq "aso" }'>
+				<c:set var='checked8' value='checked'/>
+			</c:if>
+		</c:forTokens>
+		<table>
+			<tr>
+				<td width='150'><input type='checkbox' name='hobby' value='game' ${ checked0 }/>게임</td>
+				<td width='150'><input type='checkbox' name='hobby' value='music' ${ checked1 }/>음악감상</td>
+				<td width='150'><input type='checkbox' name='hobby' value='reading' ${ checked2 }/>독서</td>
+			</tr>
+			<tr>
+				<td width='150'><input type='checkbox' name='hobby' value='climb' ${ checked3 }/>등산</td>
+				<td width='150'><input type='checkbox' name='hobby' value='sport' ${ checked4 }/>스포츠</td>
+				<td width='150'><input type='checkbox' name='hobby' value='movie' ${ checked5 }/>영화</td>
+			</tr>
+			<tr>
+				<td width='150'><input type='checkbox' name='hobby' value='travle' ${ checked6 }/>여행</td>
+				<td width='150'><input type='checkbox' name='hobby' value='sing' ${ checked7 }/>노래</td>
+				<td width='150'><input type='checkbox' name='hobby' value='aso' ${ checked8 }/>기타등등</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr height="40">
+		<th width="150">하고싶은 말</th>
+		<td><textarea name='etc' rows='3' cols='30'>${ member.etc }</textarea></td>
+	</tr>
+	<c:url var='mdel' value='mdel.do'>
+		<c:param name='userid' value='${ member.userid }'/>
+	</c:url>
+	<c:url var='main' value='/index.jsp'></c:url>
+	<tr height="40">
+		<th colspan="2">
+		<!-- <input type="submit" value="수정하기"/>&nbsp; -->
+		<!-- <button onclick='moveUpdatePage();'>수정페이지로 이동</button> -->
+		<a href="">수정페이지로 이동</a>
+		<input type="reset" value="작성취소"/>&nbsp;
+		<a href="${ mdel }">회원탈퇴</a>
+		&nbsp;&nbsp;
+		<a href="${ main }">시작페이지로 이동</a>
+		</th>
+	</tr>
+	</table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+package org.kh.first.member.model.dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository("memberDao") //nickname을 지어줌. 이 이름은 service에서 사용됨.
+public class MemberDao {
+	
+	public MemberDao() {}
+}

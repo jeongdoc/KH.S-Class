@@ -1,0 +1,17 @@
+package org.kh.first.member.model.service;
+
+import java.util.ArrayList;
+
+import org.kh.first.member.model.vo.Member;
+
+public interface MemberService {
+	//only can use abstract methods
+	//public abstract returnType methodName(Type variable);
+	Member selectLogin(Member member);
+	int insertMember(Member member);
+	int updateMember(Member member);
+	int deleteMember(String userid);
+	ArrayList<Member> selectList();
+	Member selectMember(String userid);
+
+}

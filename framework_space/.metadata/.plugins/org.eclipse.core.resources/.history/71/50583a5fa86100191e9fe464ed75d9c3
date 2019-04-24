@@ -1,0 +1,137 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>íìê°ì</title>
+<style type="text/css">
+	section form table th {
+		background: orange;
+		color: navy;
+		font-weight: bold;
+	}
+</style>
+<script type="text/javascript" src="../../resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	function checkid() {
+		//ìë²ë¡ ìë ¥ë ìì´ëê°ì ì ì¡í´ì ì´ë¯¸ ìë ìì´ëì¸ì§ íì¸ ìì²­. ì´í ê²°ê³¼ë¥¼ ë°ì ì¬ì©ì¬ë¶ ì²ë¦¬í¨.
+		//jQuery.ajax() ì¬ì©
+		$.ajax({
+			url: '/testmb/chkid',
+			type: 'post',
+			data: {userid: $('#userid').val()}, 
+			success: function(data) {
+				console.log("success"+data);
+				
+				if(data=="ok"){
+					alert('ì¬ì©í  ì ìë ìì´ëìëë¤.');
+					$('#username').focus();
+				} else {
+					alert('ì´ë¯¸ ì¬ì©ì¤ì¸ ìì´ëìëë¤.\n'+'ë¤ë¥¸ ìì´ëë¥¼ ìë ¥í´ì£¼ì¸ì');
+					$('#userid').select();
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				console.log("error : "+jqXHR+","+textStatus+","+errorThrown);
+			}
+		});
+		
+		return false; //í´ë¦­ ì´ë²¤í¸ ì ë¬ë°ì
+	}
+	
+	$(function() {
+		//ìí¸ íì¸ìë ¥ììì focusê° ì¬ë¼ì¡ì ë
+		$('#userpwd2').blur(function() {
+			console.log('í¬ì»¤ì¤ì¬ë¼ì§');
+			var pwd1=$('#userpwd1').val();
+			var pwd2=$('#userpwd2').val();
+			
+			if(pwd1!=pwd2) {
+				alert('ìí¸ê° ì¼ì¹íì§ ììµëë¤.\n'+'ë¤ì ìë ¥íì¸ì');
+				$('#userpwd1').select();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+<section>
+	<h2 align="center">íìê°ìíì´ì§</h2><br>
+	<h5 align="center">* íì í­ëª©ì íììë ¥ í­ëª©ìëë¤.</h5>
+	<form action="/testmb/minsert" method="post">
+	<table width="650" align="center">
+	<tr height="40">
+		<th width="150">*ìì´ë</th>
+		<td><input type="text" name="userid" id="userid" required/>
+		&nbsp; <button onclick="return checkid();">ì¤ë³µíì¸</button></td>
+	</tr>
+	<tr height="40">
+		<th width="150">*ì´ë¦</th>
+		<td><input type="text" name="username" required id='username'/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">*ìí¸</th>
+		<td><input type="password" name="userpwd" id="userpwd1" required/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">*ìí¸íì¸</th>
+		<td><input type="password" id="userpwd2" required/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">*ì±ë³</th>
+		<td><input type="radio" name="gender" value="M"/>ë¨ì &nbsp;
+			<input type="radio" name='gender' value='F'/>ì¬ì
+		</td>
+	</tr>
+	<tr height="40">
+		<th width="150">*ëì´</th>
+		<td><input type="number" name='age' min='19' max='100' required/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">ì íë²í¸</th>
+		<td><input type='tel' name='phone'/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">ì´ë©ì¼</th>
+		<td><input type='email' name='email'/></td>
+	</tr>
+	<tr height="40">
+		<th width="150">ì·¨ë¯¸</th>
+		<td>
+		<table>
+			<tr>
+				<td width='150'><input type='checkbox' name='hobby' value='game'/>ê²ì</td>
+				<td width='150'><input type='checkbox' name='hobby' value='music'/>ììê°ì</td>
+				<td width='150'><input type='checkbox' name='hobby' value='reading'/>ëì</td>
+			</tr>
+			<tr>
+				<td width='150'><input type='checkbox' name='hobby' value='climb'/>ë±ì°</td>
+				<td width='150'><input type='checkbox' name='hobby' value='sport'/>ì¤í¬ì¸ </td>
+				<td width='150'><input type='checkbox' name='hobby' value='movie'/>ìí</td>
+			</tr>
+			<tr>
+				<td width='150'><input type='checkbox' name='hobby' value='travle'/>ì¬í</td>
+				<td width='150'><input type='checkbox' name='hobby' value='sing'/>ë¸ë</td>
+				<td width='150'><input type='checkbox' name='hobby' value='aso'/>ê¸°íë±ë±</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr height="40">
+		<th width="150">íê³ ì¶ì ë§</th>
+		<td><textarea name='etc' rows='3' cols='30'></textarea></td>
+	</tr>
+	<tr height="40">
+		<th colspan="2">ê°ìíê¸°
+		<input type="submit" value="ê°ìíê¸°"/>&nbsp;
+		<input type="reset" value="ìì±ì·¨ì"/>&nbsp;
+		<a href="/testmb/index.jsp">ììíì´ì§ë¡ ì´ë</a>
+		</th>
+	</tr>
+	</table>
+	</form>
+</section>
+
+</body>
+</html>
