@@ -53,7 +53,7 @@ public class AdmitEnrollMemberServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 
 		String host = "smtp.naver.com";
-		final String password = "Wheerang)615";
+		final String password = "PASSWORD OF YOUR EMAIL"
 		int port = 587;
 
 		URLDecoder.decode("urlcontext", "UTF-8");
