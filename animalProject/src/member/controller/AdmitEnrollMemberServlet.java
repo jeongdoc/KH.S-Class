@@ -75,7 +75,7 @@ public class AdmitEnrollMemberServlet extends HttpServlet {
 		
 		Session session = Session.getDefaultInstance(prop, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("2u3u123", password);
+				return new PasswordAuthentication("IN FRONT OF '@' WORDS", password);
 			}
 		});
 		session.setDebug(true);
@@ -83,7 +83,7 @@ public class AdmitEnrollMemberServlet extends HttpServlet {
 		try {
 			StringBuffer buffer = new StringBuffer();
 			MimeMessage msg = new MimeMessage(session);
-			msg.setFrom(new InternetAddress("2u3u123@naver.com"));
+			msg.setFrom(new InternetAddress("SENDING EMAIL"));
 			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email)); //email
 
 			msg.setSubject("[doghouse]회원가입 인증 메일입니다.");
